@@ -1,4 +1,4 @@
-# Arrays in Java
+# Arrays
 
 ## 📌 Definition
 
@@ -179,7 +179,7 @@ for (int i = 0; i < matrix.length; i++) {
 
 ---
 
-### ⚠️ Jagged Arrays
+###  ☂️ Jagged Arrays
 
 Java allows arrays with different column sizes:
 
@@ -205,7 +205,7 @@ int[][] jagged = {
 
 ---
 
-## 💾 Space Complexity
+## 🚀 Space Complexity
 
 | Structure | Space Complexity |
 | --------- | ---------------- |
@@ -250,7 +250,7 @@ int[][] jagged = {
 
 ---
 
-## 📚 When to Use Arrays
+## 📍 When to Use Arrays
 
 * When the number of elements is known beforehand
 * When fast access is required
@@ -260,12 +260,8 @@ int[][] jagged = {
 
 ---
 
-## 🚀 Summary
+## 📖 Summary
 
-Arrays are one of the most fundamental and widely used data structures in Java. They provide **constant-time access**, simple syntax, and efficient memory usage, making them ideal for storing and processing fixed-size collections of data.
-
-They serve as the **foundation for advanced data structures** such as ArrayLists, stacks, queues, and matrices. While arrays are powerful due to their speed and simplicity, their limitations—such as fixed size and costly insertions/deletions—make them less suitable for highly dynamic scenarios.
-
-Understanding arrays deeply is essential, as many algorithmic problems and real-world applications rely on array-based logic and optimizations.
+Arrays are one of the most fundamental and widely used data structures in Java. They provide **constant-time access**, simple syntax, and efficient memory usage, making them ideal for storing and processing fixed-size collections of data. They serve as the **foundation for advanced data structures** such as ArrayLists, stacks, queues, and matrices. While arrays are powerful due to their speed and simplicity, their limitations—such as fixed size and costly insertions/deletions—make them less suitable for highly dynamic scenarios. Understanding arrays deeply is essential, as many algorithmic problems and real-world applications rely on array-based logic and optimizations.
 
 ---
