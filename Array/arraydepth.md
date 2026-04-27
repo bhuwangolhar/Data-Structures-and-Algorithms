@@ -149,8 +149,7 @@ Arrays are commonly used in:
 
 ## 📖 Summary
 
-Arrays in Java are more than just a basic data structure—they involve important concepts like **reference behavior, memory handling, and copying techniques**.
-
+Arrays in Java are more than just a basic data structure—they involve important concepts like **reference behavior, memory handling, and copying techniques**. 
 Understanding these internal behaviors helps avoid common bugs, improves performance awareness, and builds a strong foundation for solving DSA problems effectively.
 
 ---
