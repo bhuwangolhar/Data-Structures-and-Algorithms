@@ -1,74 +1,57 @@
-# Arrays in Java
+# String
 
 ## 📌 Definition
 
-An **array** is a linear data structure used to store a fixed-size sequence of elements of the same data type.
-In Java, arrays are objects that provide indexed access to elements, where indexing starts from `0`.
+A **string** is a sequence of characters used to represent text.
+In Java, strings are objects of the `String` class and are **immutable**, meaning their values cannot be changed after creation.
 
 ---
 
 ## ⚙️ Key Characteristics
 
-* **Fixed Size**: Length is defined at the time of creation and cannot be changed.
-* **Homogeneous Elements**: All elements must be of the same data type.
-* **Contiguous Memory Allocation**: Elements are stored in consecutive memory locations.
-* **Index-Based Access**: Enables fast retrieval using indices.
-* **Zero-Based Indexing**: First element is at index `0`.
+* **Immutable**: Once created, the value cannot be modified
+* **Stored in String Pool**: Optimized memory storage
+* **Index-Based Access**: Characters can be accessed using indices
+* **Zero-Based Indexing**: First character is at index `0`
+* **Object Type**: Strings are objects, not primitive types
+* **Supports Unicode**: Can store different character sets
+* **Memory Efficient (Pooling)**: Reuses existing string literals to save memory
 
 ---
 
 ## 🧱 Declaration & Initialization
 
-### 1. Declaration
+### 1. Using String Literal
 
 ```java
-int[] arr;
-```
-
-### 2. Initialization
-
-```java
-arr = new int[5]; // creates array of size 5
-```
-
-### 3. Declaration + Initialization
-
-```java
-int[] arr = new int[5];
-```
-
-### 4. Direct Initialization
-
-```java
-int[] arr = {10, 20, 30, 40, 50};
+String str = "hello";
 ```
 
 ---
 
-## 🔍 Accessing Elements
+### 2. Using new Keyword
 
 ```java
-int first = arr[0];   // first element
-int third = arr[2];   // third element
+String str = new String("hello");
 ```
+
+---
+
+## 🔍 Accessing Characters
+
+```java
+char ch = str.charAt(0); // 'h'
+```
+
+* Access is **O(1)** using index-based retrieval
 
 ---
 
 ## 🔁 Traversal
 
-### Using for loop
-
 ```java
-for (int i = 0; i < arr.length; i++) {
-    System.out.println(arr[i]);
-}
-```
-
-### Using enhanced for loop
-
-```java
-for (int num : arr) {
-    System.out.println(num);
+for (int i = 0; i < str.length(); i++) {
+    System.out.println(str.charAt(i));
 }
 ```
 
@@ -76,85 +59,95 @@ for (int num : arr) {
 
 ## 🔧 Common Operations
 
-### 1. Insertion (at index)
+### 1. Length
 
 ```java
-arr[2] = 25;
-```
-
-### 2. Update
-
-```java
-arr[1] = 100;
-```
-
-### 3. Deletion
-
-* Not directly supported.
-* Typically handled by shifting elements manually.
-
-### 4. Searching
-
-**Linear Search**
-
-```java
-for (int i = 0; i < arr.length; i++) {
-    if (arr[i] == target) {
-        // found
-    }
-}
+str.length();
 ```
 
 ---
 
-## ⏱️ Time Complexity (Basic Operations)
+### 2. Concatenation
 
-| Operation | Time Complexity |
-| --------- | --------------- |
-| Access    | O(1)            |
-| Update    | O(1)            |
-| Traversal | O(n)            |
-| Search    | O(n)            |
-| Insertion | O(n)            |
-| Deletion  | O(n)            |
+```java
+String result = str + " world";
+```
 
 ---
 
-## 🧠 Memory Representation
+### 3. Comparison
 
-* Arrays are stored in **contiguous memory locations**.
-* Each element is accessed using:
+```java
+str.equals("hello"); // content comparison
+```
 
-  `address = base_address + (index × size_of_element)`
+> `==` compares references, not values
+
+---
+
+### 4. Substring
+
+```java
+str.substring(0, 2);
+```
+
+---
+
+### 5. Case Conversion
+
+```java
+str.toLowerCase();
+str.toUpperCase();
+```
+
+---
+
+## ⏱️ Time Complexity
+
+| Operation     | Time Complexity |
+| ------------- | --------------- |
+| Access char   | O(1)            |
+| Traversal     | O(n)            |
+| Concatenation | O(n)            |
+| Substring     | O(n)            |
+
+---
+
+## 🚀 Space Complexity
+
+* Depends on number of characters → **O(n)**
+* Additional space may be used due to immutability during modifications
 
 ---
 
 ## 🎯 Advantages
 
-* Fast access using index (O(1))
-* Simple and easy to use
-* Memory efficient (no extra overhead)
+* Easy to use
+* Rich built-in methods
+* Safe due to immutability
+* Supports efficient memory usage via String Pool
 
 ---
 
 ## ⚠️ Limitations
 
-* Fixed size (cannot grow dynamically)
-* Insertion and deletion are costly
-* Wastage of memory if size is overestimated
+* Immutable → creates new objects on modification
+* Slower for frequent updates
+* Higher memory usage in repeated concatenation
 
 ---
 
-## 📚 When to Use Arrays
+## 📍 When to Use Strings
 
-* When the number of elements is known beforehand
-* When fast access is required
-* When working with simple, fixed datasets
+* Handling text data
+* Input/output operations
+* Processing words and sentences
+* Pattern matching and validation tasks
 
 ---
 
-## 🚀 Summary
+## 📖 Summary
 
-Arrays are one of the most fundamental data structures in Java, providing efficient access and simple storage for fixed-size collections of elements. They form the foundation for more advanced data structures like lists, stacks, and queues.
+Strings in Java are immutable objects designed for efficient and secure handling of textual data, and their behavior is influenced by concepts such as the string pool and object immutability, which help optimize memory usage while ensuring thread safety; although they provide a rich set of built-in methods for manipulation and comparison, developers must be mindful of performance implications—especially during repeated modifications—making it important to understand when to use strings directly and when to rely on alternatives like `StringBuilder` for better efficiency in real-world applications and algorithmic problem solving.
 
 ---
